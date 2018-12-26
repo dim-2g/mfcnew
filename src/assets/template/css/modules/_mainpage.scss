@@ -1,7 +1,7 @@
 .slider{
   padding: 26px 0 21px 0;
   //display: none;
-  @media ($bp-larger-than-desktopfullhd) {
+  @media ($bp-larger-than-desktophd) {
     padding: 48px 0;
     display: block;
   }
@@ -178,7 +178,7 @@
       margin-bottom: 9px;
       font-size: 12px;
       font-weight: bold;
-      width: 100%;
+      flex: 1;
       margin-right: 8px;
       @media ($bp-larger-than-tablet) {
         height: 82px;
@@ -209,7 +209,7 @@
       font-size: 12px;
       font-weight: bold;
       padding-top: 7px;
-      width: 100%;
+      flex: 1;
       margin-left: 8px;
       @media ($bp-larger-than-tablet) {
         width: 100%;
@@ -302,9 +302,10 @@
     text-decoration: none;
     border-bottom: 1px dashed #a3a3a3;
     outline: none;
+    display: inline-block;
     &:hover{
       color: #a3a3a3;
-      border-bottom: 0 none;
+      border-color: transparent;
     }
     &--open{
       display: inline;
@@ -332,7 +333,7 @@
   text-decoration: none;
   margin-bottom: 23px;
   background-size: cover;
-  @media ($bp-larger-than-desktopfullhd) {
+  @media ($bp-larger-than-desktophd) {
     padding: 36px 40px;
     margin-bottom: 26px;
   }
@@ -347,14 +348,14 @@
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 16px;
-    @media ($bp-larger-than-desktopfullhd) {
+    @media ($bp-larger-than-desktophd) {
       font-size: 20px;
     }
   }
   &__text{
     font-size: 14px;
     min-height: 68px;
-    @media ($bp-larger-than-desktopfullhd) {
+    @media ($bp-larger-than-desktophd) {
       font-size: 15px;
     }
   }
@@ -363,7 +364,7 @@
     font-size: 13px;
     color: $red;
     text-decoration: underline;
-    @media ($bp-larger-than-desktopfullhd) {
+    @media ($bp-larger-than-desktophd) {
       font-size: 15px;
     }
     span{
@@ -406,7 +407,7 @@
     background-image: -moz-linear-gradient( 18deg, rgb(27,49,86) 0%, rgb(41,73,128) 100%);
     background-image: -webkit-linear-gradient( 18deg, rgb(27,49,86) 0%, rgb(41,73,128) 100%);
     background-image: -ms-linear-gradient( 18deg, rgb(27,49,86) 0%, rgb(41,73,128) 100%);
-    box-shadow: none;
+    //box-shadow: none;
     color: #fff;
   }
   &:active{
@@ -421,7 +422,7 @@
     padding-right: 20px;
     overflow: hidden;
     font-size: 13px;
-    @media ($bp-larger-than-desktopfullhd) {
+    @media ($bp-larger-than-desktophd) {
       padding-left: 70px;
       font-size: 14px;
       padding-right: 28px;
@@ -433,7 +434,7 @@
       left: 8px;
       bottom: 0px;
       @include sprite($icon-employee);
-      @media ($bp-larger-than-desktopfullhd) {
+      @media ($bp-larger-than-desktophd) {
         left: 28px;
         bottom: -9px;
       }
@@ -654,15 +655,20 @@
     color: transparent;
     width: 12px;
     height: 37px;
+    opacity: 0.3;
+    transition: $anim;
     &:before{
       width: 12px;
       height: 37px;
       display: inline-block;
       content: "";
-      opacity: 0.3;
+      
     }
     &:active{
       opacity: 0.3;
+    }
+    &:hover{
+      opacity: 1;
     }
   }
   .slick-prev{
@@ -684,7 +690,7 @@
 .main-services{
   padding: 24px 0 31px;
   background-color: $light-blue;
-  @media ($bp-larger-than-desktopfullhd) {
+  @media ($bp-larger-than-desktophd) {
     display: block;
     padding: 37px 0 57px;
   }
@@ -868,8 +874,8 @@
     left: 8px;
     bottom: 0px;
     @include sprite($icon-employee-big);
-    @media ($bp-larger-than-desktopfullhd) {
-      left: 28px;
+    @media ($bp-larger-than-desktophd) {
+      left: 44px;
       bottom: -9px;
     }
   }
@@ -1158,10 +1164,32 @@
     border-radius: 14px;
     padding: 10px;
     width: 136px;
+    text-decoration: none;
+    position: relative;
     @media ($bp-larger-than-tablet) {
       height: 229px;
       width: auto;
       margin-bottom: 20px;
+    }
+    &:hover{
+      color: #fff;
+      &:after{
+        opacity: 0.4;
+      }
+    }
+    &:after{
+      display: inline-block;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 15px;
+      background-color: $blue;
+      z-index: 2;
+      opacity: 0.6;
+      transition: $anim;
     }
     &--contract{
       background: transparent url('/assets/template/images/main-labels__contract.png') center top no-repeat;
@@ -1226,6 +1254,7 @@
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 4px;
+    z-index: 5;
     @media ($bp-larger-than-tablet) {
       font-size: 21px;
     }
@@ -1234,6 +1263,7 @@
     color: #b8c6df;
     font-size: 12px;
     margin-bottom: 4px;
+    z-index: 5;
     @media ($bp-larger-than-tablet) {
       font-size: 15px;
     }
@@ -1247,6 +1277,7 @@
     padding-top: 60px;
     position: relative;
     margin-bottom: 6px;
+    z-index: 5;
     @media ($bp-larger-than-tablet) {
       padding-top: 125px;
       font-size: 21px;
@@ -1474,7 +1505,7 @@
   background-color: $light-blue;
   padding: 20px 0;
   //display: none;
-  @media ($bp-larger-than-desktopfullhd) {
+  @media ($bp-larger-than-desktophd) {
     padding: 38px 0 20px;
     display: block;
   }
@@ -1507,6 +1538,7 @@
     }
     &:hover{
       opacity: 1;
+      text-decoration: none;
     }
   }
   &__grid{
@@ -1655,6 +1687,8 @@
     color: transparent;
     width: 12px;
     height: 37px;
+    opacity: 0.3;
+    transition: $anim;
     @media ($bp-larger-than-tablet) {
       width: 23px;
       height: 66px;
@@ -1664,7 +1698,6 @@
       height: 37px;
       display: inline-block;
       content: "";
-      opacity: 0.3;
       @media ($bp-larger-than-tablet) {
         width: 23px;
         height: 66px;
@@ -1672,6 +1705,9 @@
     }
     &:active{
       opacity: 0.3;
+    }
+    &:hover{
+      opacity: 1;
     }
   }
   .slick-prev{
@@ -1704,7 +1740,7 @@
 
 .main-news{
   padding: 19px 0 10px;
-  @media ($bp-larger-than-desktopfullhd) {
+  @media ($bp-larger-than-desktophd) {
     padding: 38px 0 10px;
     display: block;
   }
@@ -1737,6 +1773,7 @@
     }
     &:hover{
       opacity: 1;
+      text-decoration: none;
     }
   }
   &__grid{
@@ -1888,7 +1925,7 @@
 
 .main-insurance{
   padding: 15px 0 22px;
-  @media ($bp-larger-than-desktopfullhd) {
+  @media ($bp-larger-than-desktophd) {
     padding: 10px 0 34px;
     display: block;
   }
@@ -2021,19 +2058,19 @@
 
 .main-contacts {
   padding: 0 0 35px;
-  @media ($bp-larger-than-desktopfullhd) {
+  @media ($bp-larger-than-desktophd) {
     padding: 0 0 31px;
     display: block;
   }
   &__grid {
     margin-bottom: 22px;
-    @media ($bp-larger-than-tablet) {
+    @media ($bp-larger-than-desktop) {
       display: flex;
     }
   }
   &__content {
     margin-bottom: 25px;
-    @media ($bp-larger-than-tablet) {
+    @media ($bp-larger-than-desktop) {
       width: 360px;
       flex-shrink: 0;
       margin-right: 30px;
