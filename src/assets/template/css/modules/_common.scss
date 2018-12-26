@@ -1457,7 +1457,7 @@ ul.mdash{
     transition: $anim;
     border-radius: 14px 0 0 14px;
     background-color: $light-blue;
-    padding: 5px;
+    padding: 5px 14px 5px 5px;
     display: block;
     display: flex;
     flex-direction: column;
@@ -1467,6 +1467,12 @@ ul.mdash{
     text-transform: uppercase;
     text-align: center;
     flex: 1 0 auto;
+    transition: $anim;
+    transform: translateX(4px);
+    &:hover{
+      opacity: 0.8;
+      transform: translateX(0);
+    }
     &--agent{
       height: 56px;
       color: $red;
@@ -1481,7 +1487,7 @@ ul.mdash{
         font-weight: normal;
       }
       &:hover{
-        background-color: #fff;
+        //background-color: #fff;
         color: $red;
       }
       span{
@@ -1510,7 +1516,7 @@ ul.mdash{
         margin-right: 0;
       }
       &:hover{
-        background-color: #fff;
+        //background-color: #fff;
         color: $blue;
       }
       span{
@@ -1541,7 +1547,7 @@ ul.mdash{
         margin-left: 0;
       }
       &:hover{
-        background-color: #fff;
+        //background-color: #fff;
         color: $blue;
       }
       span{

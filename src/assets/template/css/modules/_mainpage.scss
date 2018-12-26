@@ -436,7 +436,7 @@
       @include sprite($icon-employee);
       @media ($bp-larger-than-desktophd) {
         left: 28px;
-        bottom: -9px;
+        bottom: 0px;
       }
     }
   }
@@ -531,6 +531,7 @@
   text-decoration: none;
   color: #222;
   display: block;
+  transition: $anim;
   @media ($bp-larger-than-desktop) {
     min-height: 113px;
     padding: 21px 36px 21px 32px;
@@ -540,6 +541,7 @@
     transform: translateY(-3px);
     text-decoration: none;
     color: #222;
+    box-shadow: 0px 15px 20px 0px rgba(30, 55, 95, 0.2);
     .price-block__caption{
       border: 0 none;
     }
@@ -744,12 +746,14 @@
   width: 100%;
   padding: 65px 15px 20px 15px;
   position: relative;
+  transition: $anim;
   @media ($bp-larger-than-tablet) {
     height: 190px;
     padding: 110px 30px 20px 30px;
   }
   &:hover{
     //transform: translateY(-3px);
+    box-shadow: 0px 15px 20px 0px rgba(30, 55, 95, 0.2);
     .service-block__caption{
       text-decoration: none;
     }

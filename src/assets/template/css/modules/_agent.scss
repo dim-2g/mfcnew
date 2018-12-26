@@ -35,6 +35,9 @@
         }
         img{
           max-width: 100%;
+          @media ($bp-larger-than-desktop) {
+            max-width: none;
+          }
         }
     }
     &__title{
@@ -121,6 +124,14 @@
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 20px;
+        color: #706e76;
+        a{
+          color: #4b597c;
+          &:hover{
+            color: #4b597c;
+            text-decoration: none;
+          }
+        }
     }
 }
 
