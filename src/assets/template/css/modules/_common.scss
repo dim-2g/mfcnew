@@ -516,7 +516,8 @@ body{
   background-color: rgba(255, 255, 255, 0.95);
   padding: 18px 28px;
   text-align: left;
-  box-shadow: 0 10px 15px 0px rgba(62, 62, 62, 0.2);
+  //box-shadow: 0 10px 15px 0px rgba(62, 62, 62, 0.2);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, .23);
   float: left;
   &__row{
     display: flex;
@@ -1426,6 +1427,29 @@ ul.mdash{
           left: 1px;
           top: 9px;
           background-color: #cdcdd0;
+      }
+  }
+}
+
+ul.ndash{
+  list-style-type: none;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  li{
+      padding-left: 20px;
+      position: relative;
+      line-height: 135%;
+      margin-bottom: 12px;
+      &:before{
+          display: inline-block;
+          content: "";
+          width: 11px;
+          height: 1px;
+          margin-right: 10px;
+          position: absolute;
+          left: 1px;
+          top: 9px;
+          background-color: #444;
       }
   }
 }
