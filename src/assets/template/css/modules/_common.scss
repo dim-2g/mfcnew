@@ -56,7 +56,9 @@ a:hover{
     left: 0;
     width: 100%;
     z-index: 100;
+    box-shadow: 0 4px 4px -3px #e3e3e3;
     @media($bp-larger-than-desktop) {
+      box-shadow: 0 none;
       background: transparent url("/assets/template/images/header__back.jpg") top center no-repeat;
       //background-size: cover;
       //height: 250px;
@@ -1362,7 +1364,7 @@ ol{
       text-decoration: none;
       font-size: 12px;
       color: #8b8b91;
-      @media($bp-larger-than-mobile ) {
+      @media($bp-larger-than-mobile) {
         font-size: 14px;
       }
   }
