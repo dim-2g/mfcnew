@@ -43,7 +43,27 @@ $(function() {
         $('.main-about__content').toggleClass('open');
     });
 
-     
+    $('[data-tab]').click(function(){
+        var xtab = $('.xtab');
+        $('[data-tab]').removeClass('active');
+        $(this).addClass('active');
+
+        var data_tab = $(this).attr('data-tab');
+        xtab.animate({"opacity": 0.2}, 300, function() {
+            xtab.removeClass('active');
+            xtab.animate({"opacity": 1});
+            $(data_tab).addClass('active');
+        });
+        /*
+        xtab.css({"opacity": 0.1});
+        setTimeout(function() {
+            xtab.css({"opacity": 1});
+        }, 200);
+        
+        $(data_tab).addClass('active');
+*/
+        return false;
+    }); 
 
     $('[data-toggle]').on('click', function (e) {
         e.preventDefault();

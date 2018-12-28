@@ -730,9 +730,6 @@
       padding-right: 15px;
       width: 33.33%;
     }
-    &:hover{
-      transform: translateY(-3px);
-    }
   }
 }
 
@@ -747,12 +744,13 @@
   padding: 65px 15px 20px 15px;
   position: relative;
   transition: $anim;
+  transform: translateY(0);
   @media ($bp-larger-than-tablet) {
     height: 190px;
     padding: 110px 30px 20px 30px;
   }
   &:hover{
-    //transform: translateY(-3px);
+    transform: translateY(-3px);
     box-shadow: 0px 15px 20px 0px rgba(30, 55, 95, 0.2);
     .service-block__caption{
       text-decoration: none;
