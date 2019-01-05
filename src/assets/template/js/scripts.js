@@ -75,11 +75,75 @@ $(function() {
         //$(this).toggleClass('active');
     });
 
+    $('body').on('click', '.header-menu a, .mobile-menu a', function() {
+        link = $(this);
+        setTimeout(function(){
+            return !setActivePriceTabs(link.attr('href'));
+        }, 500);
+    });
+
+    $('g.city').hover(function () {
+        var district = $(this).attr('data-district');
+        //$('title').text(district);
+        $('text[data-district-name="'+district+'"]').addClass('hover');
+        $(this).find('*').addClass('bgHoverSVG');
+    }, function () {
+        $('text[data-district-name]').removeClass('hover');
+        $(this).find('*').removeClass('bgHoverSVG');
+    });
+
+    $('g.city, text.district-name').on('click', function(e) {
+        e.preventDefault();
+        var href = $(this).attr('data-href');
+        if (typeof(href) != 'undefined' && href != '') {
+            document.location.href = href;
+        }
+    });
+
+    $('text.district-name').hover(function () {
+        $(this).addClass('hover');
+        var district = $(this).attr('data-district-name');
+        //$('title').text(district);
+        var g = $('g[data-district="'+district+'"]');
+        g.addClass('bgHoverSVG');
+        g.find('*').addClass('bgHoverSVG');
+    }, function () {
+        $(this).removeClass('hover');
+    });
+
     initPartnersSlider();
     initGratefulSlider();
     initMainNewsSlider();
     initMainReviewsSlider();
+    setActivePriceTabs();
+    initAboutGratefulSlider();
 });
+
+setActivePriceTabs = function(link='') {
+    let isLinkClick = true;
+    if (link=='') {
+        link = document.location.href; 
+        isLinkClick = false;
+    }
+    if (link.indexOf("/prices/#funeral")!=-1) {
+        console.log('Таб. Захоронение.');
+        $('[data-tab=".xtab-burial"]').trigger('click');
+        if (isLinkClick) {
+            $('body').removeClass('open-mobile-menu');
+        }
+        return true;
+    }
+    if (link.indexOf("/prices/#cremation")!=-1) {
+        console.log('Таб. Кремация.');
+        $('[data-tab=".xtab-cremation"]').trigger('click');
+        if (isLinkClick) {
+            $('body').removeClass('open-mobile-menu');
+        }
+        return true;
+    }
+    return false;
+}
+
 
 setMobileMenuHeight = function() {
     var height = $(window).height();
@@ -220,6 +284,47 @@ initMainReviewsSlider = function() {
             $(selector).slick('unslick');
             main_reviews_slider = false;
         }
+    }
+};
+
+var slider_about_grateful = false;
+initAboutGratefulSlider  = function() {
+    if (!slider_about_grateful) {
+        $('.about-grateful-slider').slick({
+            'autoplay': false,
+            'arrows': true,
+            'dots': false,
+            'slidesToShow': 5,
+            'slidesToScroll': 1,
+            'adaptiveHeight': false,
+            'responsive': [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 750,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 550,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                }
+            ]
+        });
+        slider_about_grateful = true;
     }
 };
 

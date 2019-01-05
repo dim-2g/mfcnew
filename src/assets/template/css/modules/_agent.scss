@@ -106,7 +106,21 @@
         margin-bottom: 24px;
     }
     &__input-item{
+        position: relative;
         margin-bottom: 10px;
+        /*
+        &.error{
+          &:after{
+            position: absolute;
+            display: inline-block;
+            content: "";
+            @include sprite($danger);
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+        */
         input[type="text"]{
             height: 54px;
             line-height: 54px;
@@ -278,5 +292,29 @@
   }
 
   .single-page{
-    //display: none;
+    &--agent{
+      .single-page__grid{
+        display: flex;
+        flex-direction: column;
+        @media ($bp-larger-than-desktop) {
+          flex-direction: row;
+          display: flex;
+        }
+      }
+      .single-page__content{
+        order: 2;
+        @media ($bp-larger-than-mobile) {
+          order: 1;
+        }
+      }
+      .single-page__sidebar{
+        order: 1;
+        margin-bottom: 40px;
+        @media ($bp-larger-than-mobile) {
+          order: 2;
+          margin-bottom: 0;
+        }
+      }
+    }
   }
+

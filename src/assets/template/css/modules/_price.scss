@@ -1,30 +1,53 @@
 .price-tabs{
-    margin-bottom: 54px;
+    margin-bottom: 40px;
+    @media($bp-larger-than-desktop) {
+        margin-bottom: 54px;
+    }
     &__nav{
         display: flex;
         justify-content: center;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
+        @media($bp-larger-than-desktop) {
+            margin-bottom: 35px;
+        }
     }
     &__link{
-        height: 77px;
+        height: 50px;
         text-decoration: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 310px;
-        font-size: 15px;
+        width: 125px;
+        font-size: 12px;
         text-transform: uppercase;
         font-weight: bold;
         background-color: $light-blue;
         color: $blue;
         opacity: 0.7;
         transition: $anim;
+        outline: none;
         box-shadow: 0 2px 5px 0 rgba(3,17,19,0.15);
+        @media($bp-larger-than-tablet) {
+            font-size: 13px;
+            height: 60px;
+            width: 260px;
+        }
+        @media($bp-larger-than-desktop) {
+            width: 310px;
+            height: 77px;
+            font-size: 15px;
+        }
         &--left{
-            border-radius: 38px 0 0 38px;
+            border-radius: 25px 0 0 25px;
+            @media($bp-larger-than-tablet) {
+                border-radius: 38px 0 0 38px;
+            }
         }
         &--right{
-            border-radius: 0 38px 38px 0;
+            border-radius: 0 25px 25px 0;
+            @media($bp-larger-than-tablet) {
+                border-radius: 0 38px 38px 0;
+            }
         }
         &:hover{
             opacity: 1;
@@ -50,27 +73,39 @@
     &__label{
         position: relative;
         &--cremation{
-            padding-left: 48px;
+            padding-left: 0;
+            @media($bp-larger-than-tablet) {
+                padding-left: 48px;
+            }
             &:before{
                 content: "";
-                display: inline-block;
+                display: none;
                 @include sprite($price-cremation-small);
                 position: absolute;
                 left: 4px;
                 top: 50%;
                 transform: translateY(-50%);
+                @media($bp-larger-than-tablet) {
+                    display: inline-block;
+                }
             }
         }
         &--burial{
-            padding-left: 48px;
+            padding-left: 0;
+            @media($bp-larger-than-tablet) {
+                padding-left: 48px;
+            }
             &:before{
                 content: "";
-                display: inline-block;
+                display: none;
                 @include sprite($price-burial-small);
                 position: absolute;
                 left: 4px;
                 top: 50%;
-                transform: translateY(-50%);
+                @media($bp-larger-than-tablet) {
+                    display: inline-block;
+                    transform: translateY(-50%);
+                }
             }
         }
     }
@@ -90,17 +125,28 @@
 }
 
 .cost-block{
+    position: relative;
     &__grid{
         display: flex;
         margin-left: -15px;
         margin-right: -15px;
         position: relative;
+        flex-wrap: wrap;
+        justify-content: center;
+        @media($bp-larger-than-desktop) {
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+        }
     }
     &__item{
         max-width: 292px;
         padding-left: 15px;
         padding-right: 15px;
         width: 100%;
+        margin-bottom: 40px;
+        @media($bp-larger-than-desktop) {
+            margin-bottom: 0;
+        }
     }
     &__card{
         box-shadow: 0px 15px 15px 0px rgba(30, 55, 95, 0.1);
@@ -114,14 +160,22 @@
         }
     }
     &__header{
-        height: 87px;
+        height: 60px;
         background-color: $blue;
         color: #fff;
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 900;
         display: flex;
         align-items: center;
         justify-content: center;
+        @media($bp-larger-than-tablet) {
+            height: 60px;
+            font-size: 20px;
+        }
+        @media($bp-larger-than-desktop) {
+            height: 87px;
+            font-size: 24px;
+        }
     }
     &__price{
         font-size: 24px;
@@ -129,7 +183,9 @@
         font-weight: 900;
         text-align: center;
         padding-top: 20px;
-        padding-bottom: 10px;
+        @media($bp-larger-than-tablet) {
+            padding-bottom: 10px;
+        }
     }
     &__cur{
         font-size: 15px;
@@ -139,6 +195,10 @@
     }
     .separator{
         margin-top: 0;
+        margin-bottom: 15px;
+        @media($bp-larger-than-tablet) {
+            margin-bottom: 0;
+        }
     }
     &__info{
         padding: 5px 24px 25px;
@@ -147,8 +207,13 @@
             padding: 0;
             list-style-type: none;
             li{
-                margin-bottom: 15px;
+                margin-bottom: 8px;
                 line-height: 120%;
+                font-size: 13px;
+                @media($bp-larger-than-tablet) {
+                    margin-bottom: 15px;
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -157,14 +222,16 @@
         font-size: 14px;
     }
     &__hint{
-        position: absolute;
-        width: 50%;
         padding-right: 30px;
         padding-left: 15px;
-        bottom: 0;
-        left: 0;
         opacity: 0.64;
         color: #000;
+        @media($bp-larger-than-desktop) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+        }
         p{
             margin: 0;
             +p{
@@ -177,14 +244,26 @@
 .price-contacts{
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-bottom: 35px;
+    margin-bottom: 10px;
+    @media($bp-larger-than-desktop) {
+        margin-bottom: 32px;
+    }
     &__grid{
-        display: flex;
+        @media($bp-larger-than-desktop) {
+            display: flex;
+        }
     }
     &__address{
         width:100%;
-        padding-left: 75px;
+        padding-left: 60px;
         position: relative;
+        margin-bottom: 26px;
+        @media($bp-larger-than-tablet) {
+            padding-left: 75px;
+        }
+        @media($bp-larger-than-desktop) {
+            margin-bottom: 0;
+        }
         &:before{
             display: inline-block;
             content: "";
@@ -216,10 +295,18 @@
         }
     }
     &__phones{
-        width: 294px;
-        flex-shrink: 0;
-        padding-left: 75px;
+        width: 100%;
+        padding-left: 60px;
         position: relative;
+        margin-bottom: 26px;
+        @media($bp-larger-than-tablet) {
+            padding-left: 75px;
+        }
+        @media($bp-larger-than-desktop) {
+            margin-bottom: 0;
+            flex-shrink: 0;
+            width: 294px;
+        }
         &:before{
             display: inline-block;
             content: "";
@@ -257,10 +344,18 @@
         font-size: 18px;
     }
     &__emails{
-        width: 262px;
-        flex-shrink: 0;
-        padding-left: 75px;
+        width: 100%;
+        padding-left: 60px;
         position: relative;
+        margin-bottom: 26px;
+        @media($bp-larger-than-tablet) {
+            padding-left: 75px;
+        }
+        @media($bp-larger-than-desktop) {
+            margin-bottom: 0;
+            flex-shrink: 0;
+            width: 262px;
+        }
         &:before{
             display: inline-block;
             content: "";
@@ -296,8 +391,264 @@
     }
     &__label{
         color: #5c5c5c;
-        font-size: 13px;
+        font-size: 12px;
         text-transform: uppercase;
         margin-bottom: 4px;
+        @media($bp-larger-than-tablet) {
+            font-size: 13px;
+        }
+    }
+}
+
+.calculator-button{
+    box-shadow: 0px 15px 15px 0px rgba(30, 55, 95, 0.1);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;   
+    margin-bottom: 42px;
+    text-decoration: none;
+    color: #fff;
+    background: transparent url('/assets/template/images/calculator-button.jpg') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: $anim;
+    @media($bp-larger-than-tablet) {
+        height: 212px;
+    }
+    &:hover{
+        color: #fff;
+        text-decoration: none;
+        &:after{
+            opacity: 0;
+        }
+        .calculator-button__link{
+            text-decoration: none;
+        }
+    }
+    &:after{
+        display: inline-block;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 15px;
+        background-color: $blue;
+        z-index: 2;
+        opacity: 0.3;
+        transition: $anim;
+    }
+    &__box{
+        text-align: center;
+        max-width: 600px;
+        position: relative;
+        z-index: 10;
+    }
+    &__link{
+        font-size: 18px;
+        font-weight: 900;
+        color: #fff;
+        display: inline-block;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        position: relative;
+        padding-bottom: 0px;
+        text-decoration: underline;
+        margin-top: 20px;
+        @media($bp-larger-than-tablet) {
+            font-size: 24px;
+            margin-top: 0;
+        }
+    }
+    &__info{
+        color: #b8c6df;
+        font-size: 12px;
+        margin-bottom: 2px;
+        @media($bp-larger-than-tablet) {
+            font-size: 18px;
+        }
+    }
+}
+
+.price-compensation{
+    &__text{
+        font-size: 18px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        @media($bp-larger-than-tablet) {
+            font-size: 24px;
+        }
+    }
+}
+
+.price-steps{
+    margin-top: 30px;
+    &__grid{
+        @media($bp-larger-than-tablet) {
+            display: flex;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+    &__col{
+        width: 100%;
+        @media($bp-larger-than-tablet) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .mdash{
+            margin-bottom: 0;
+        }
+        +.price-steps__col{
+            margin-top: 30px;
+            @media($bp-larger-than-tablet) {
+                margin-top: 0;
+            }
+        }
+    }
+    &__caption{
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 900;
+        @media($bp-larger-than-tablet) {
+            font-size: 18px;
+        }
+    }
+    +.separator{
+        margin-top: 10px;
+    }
+}
+
+.price-button{
+    box-shadow: 0px 2px 5px 0px rgba(3, 17, 19, 0.15);
+    height: 49px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 25px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: $blue;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 22px;
+    transition: $anim;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 0;
+    width: 240px;
+    flex-shrink: 0;
+    background-color: #f3f6f9;
+    @media($bp-larger-than-tablet) {
+        margin-right: 15px;
+    }
+    &:hover{
+        background-color: #fff;
+    }
+    &__row{
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        @media($bp-larger-than-tablet) {
+            justify-content: flex-start;
+            margin-bottom: 25px;
+        }
+    }
+  }
+
+.price-panels{
+    margin-top: 42px;
+    &__grid{
+        @media($bp-larger-than-tablet) {
+            display: flex;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+    &__item{
+        width: 100%;
+        @media($bp-larger-than-tablet) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    &__card{
+        display: block;
+        background: #f9f0f0;
+        border-radius: 14px;
+        padding: 28px 32px;
+        color: #222;
+        text-decoration: none;
+        margin-bottom: 23px;
+        background-size: cover;
+        max-width: 360px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        @media ($bp-larger-than-desktop) {
+            height: 223px;
+            padding: 34px 40px;
+            margin-bottom: 11px;
+        }
+        &:hover{
+            color: #222;
+            .price-panels__link{
+                text-decoration: none;
+            }
+        }
+        &--1{
+            background: transparent url('/assets/template/images/price-panels-1.jpg') top center;
+        }
+        &--2{
+            background: transparent url('/assets/template/images/price-panels-2.jpg') top center;
+        }
+        &--3{
+            background: transparent url('/assets/template/images/price-panels-3.jpg') top center;
+        }
+    }
+    &__title{
+        font-size: 16px;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        margin-top: auto;
+        @media ($bp-larger-than-desktop) {
+            font-size: 20px;
+        }
+    }
+    &__link{
+        text-transform: uppercase;
+        font-size: 13px;
+        color: $red;
+        text-decoration: underline;
+        @media ($bp-larger-than-desktophd) {
+            font-size: 15px;
+        }
+        span{
+            position: relative;
+            padding-right: 15px;
+            &:after{
+                position: absolute;
+                right: 0;
+                display: inline-block;
+                content: "»"
+            }
+        }
+    }
+    +.separator{
+        margin-bottom: 10px;
+        margin-top: 10px;
+        @media ($bp-larger-than-desktop) {
+            margin-top: 30px;
+            margin-bottom: 32px;
+        }
     }
 }

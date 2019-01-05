@@ -31,6 +31,7 @@ a:hover{
 .header {
   background: transparent url("/assets/template/images/header__back.jpg") center 61px no-repeat;
   background-size: cover;
+  z-index: 100;
   @media($bp-larger-than-desktop) {
     background: transparent url("/assets/template/images/header__back.jpg") top center no-repeat;
     background-size: auto;
@@ -40,14 +41,16 @@ a:hover{
     position: relative;
   }
   &:after{
-    height: 17px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
-    display: inline-block;
-    background: transparent url('/assets/template/images/header-gradient-small.png') left bottom repeat-x;
+    @media($bp-larger-than-desktop) {
+      height: 17px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      content: "";
+      display: inline-block;
+      background: transparent url('/assets/template/images/header-gradient-small.png') left bottom repeat-x;
+    }
   }
   &__fixed {
     background-color: #fff;
@@ -700,6 +703,7 @@ body{
 .main-footer{
   padding: 0 0 82px;
   background-color: #eee6e6;
+  position: relative;
   @media ($bp-larger-than-tablet) {
     padding: 51px 0 28px;
   }
@@ -1207,7 +1211,6 @@ body{
       }
   }
   &__content{
-    
     &.open{
       .text-hidden{
           display: block;
@@ -1232,7 +1235,6 @@ body{
         margin-left: 30px;
         padding-top: 5px;
       }
-
   }
   &__more-box{
       display: block;
@@ -1273,10 +1275,15 @@ body{
     margin-top: 0;
     line-height: 120%;
     margin-bottom: 15px;
+    @media ($bp-larger-than-tablet) {
+        margin-bottom: 20px;
+        line-height: 120%;
+        font-size: 21px;
+    }
     @media ($bp-larger-than-desktop) {
-        margin-bottom: 28px;
-        line-height: 105%;
-        font-size: 35px;
+      margin-bottom: 28px;
+      line-height: 105%;
+      font-size: 35px;
     }
   }
   p{
@@ -1344,7 +1351,10 @@ ol{
 }
 .crumbs{
   margin-bottom: 10px;
-  @media($bp-larger-than-mobile ) {
+  @media($bp-larger-than-tablet ) {
+    margin-bottom: 10px;
+  }
+  @media($bp-larger-than-desktop ) {
     margin-bottom: 25px;
   }
 }
@@ -1359,6 +1369,10 @@ ol{
       display: inline-block;
       margin-bottom: 0;
       color: #8b8b91;
+      font-size: 12px;
+      @media($bp-larger-than-mobile) {
+        font-size: 14px;
+      }
   }
   a{
       text-decoration: none;
@@ -1469,6 +1483,7 @@ ul.ndash{
   flex-wrap: wrap;
   width: 111px;
   display: none;
+  z-index: 200;
   @media ($bp-larger-than-desktophd) {
     display: block;
   }
@@ -1495,6 +1510,7 @@ ul.ndash{
     flex: 1 0 auto;
     transition: $anim;
     transform: translateX(4px);
+    box-shadow: 0 0 8px -5px #ccc;
     &:hover{
       opacity: 0.8;
       transform: translateX(0);
@@ -1592,3 +1608,47 @@ ul.ndash{
     }
   }
 }
+
+[data-bf-error]{
+  position: relative;
+  &.error{
+    &:after{
+      position: absolute;
+      display: inline-block;
+      content: "";
+      @include sprite($danger);
+      right: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+
+.inner-page{
+  .stext{
+    ul{
+      list-style-type: none;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      li{
+          padding-left: 30px;
+          position: relative;
+          line-height: 135%;
+          margin-bottom: 12px;
+          &:before{
+              display: inline-block;
+              content: "";
+              width: 11px;
+              height: 1px;
+              margin-right: 10px;
+              position: absolute;
+              left: 1px;
+              top: 9px;
+              background-color: #cdcdd0;
+          }
+      }     
+    }
+  }
+}
+
