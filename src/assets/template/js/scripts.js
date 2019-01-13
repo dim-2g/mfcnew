@@ -136,7 +136,7 @@ $(function() {
     });
     $('body').on('click', '.catalog-menu__title a', function(e) {
         e.stopPropagation();
-    }
+    });
 
     initPartnersSlider();
     initGratefulSlider();
