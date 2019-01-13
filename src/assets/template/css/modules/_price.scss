@@ -124,6 +124,12 @@
     }
 }
 
+.xtab-cremation{
+    @media($bp-larger-than-desktop) {
+        padding-bottom: 100px;
+    }
+}
+
 .cost-block{
     position: relative;
     &__grid{

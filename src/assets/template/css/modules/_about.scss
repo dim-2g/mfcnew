@@ -199,6 +199,12 @@
           margin-bottom: 38px;
         }
     }
+    &__item{
+        display: inline-block;
+        font-size: 0;
+        padding: 0 12px;
+    }
+
 }
 
 .about-grateful-slider{
@@ -378,63 +384,3 @@
     }
 }
 
-.fixed-rating{
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
-    background-color: $light-blue;
-    padding: 15px 12px 20px;
-    width: 126px;
-    border-radius: 0 14px 14px 0;
-    text-decoration: none;
-    text-align: center;
-    transform: translateX(-4px);
-    transition: $anim;
-    box-shadow: 0 0 8px -5px #ccc;
-    display: none;
-    @media ($bp-larger-than-desktophd) {
-        display: block;
-    } 
-    &:hover{
-        text-decoration: none;
-        transform: translateX(0);
-    }
-    &__values{
-        color: #6c7e9a;
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    &__value{
-        font-size: 22px;
-        color: $blue;
-        font-weight: 900;
-    }
-    &__text{
-        color: #616264;
-        font-size: 13px;
-        text-align: center;
-        line-height: 100%;
-    }
-    &__stars{
-        display: flex;
-        justify-content: space-around;
-        margin-bottom: 8px;
-    }
-    &__star{
-        &:before{
-            display: inline-block;
-            content: "";
-            @include sprite($rating-star);
-        }
-        &--4-8{
-            &:before{
-                display: inline-block;
-                content: "";
-                @include sprite($rating-star-4-8);
-            }   
-        }
-    }
-}

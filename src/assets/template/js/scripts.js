@@ -44,24 +44,21 @@ $(function() {
     });
 
     $('[data-tab]').click(function(){
+        console.log('start animate');
         var xtab = $('.xtab');
+        xtab.stop(true, true);
         $('[data-tab]').removeClass('active');
         $(this).addClass('active');
 
         var data_tab = $(this).attr('data-tab');
         xtab.animate({"opacity": 0.2}, 300, function() {
+            console.log('in animate');
             xtab.removeClass('active');
             xtab.animate({"opacity": 1});
+            console.log('in animate 2');
             $(data_tab).addClass('active');
         });
-        /*
-        xtab.css({"opacity": 0.1});
-        setTimeout(function() {
-            xtab.css({"opacity": 1});
-        }, 200);
-        
-        $(data_tab).addClass('active');
-*/
+        console.log('stop animate');
         return false;
     }); 
 
@@ -111,6 +108,36 @@ $(function() {
         $(this).removeClass('hover');
     });
 
+    $('.review-form__star').hover(
+        function(){
+            star = $(this).attr('data-star');
+            $('.review-form__stars').attr("data-star", star);
+        },
+        function(){
+            //$('.review-form__stars').attr("data-star", 0);
+        }
+    );
+    $('.review-form__star').on('click', function() {
+        $('.review-form__stars').addClass('checked');    
+        $(this).parents('form').find('[name="rating"]').val($(this).attr('data-star'));
+    });
+    $('.review-form__stars').hover(
+        function(){
+        },
+        function(){
+            star = $(this).parents('form').find('[name="rating"]').val();
+            $('.review-form__stars').attr("data-star", star);
+        }
+    );
+
+    $('body').on('click', '.catalog-menu__title', function(e) {
+        e.preventDefault();
+        $(this).parents('.catalog-menu__item').toggleClass('catalog-menu__item--active');
+    });
+    $('body').on('click', '.catalog-menu__title a', function(e) {
+        e.stopPropagation();
+    }
+
     initPartnersSlider();
     initGratefulSlider();
     initMainNewsSlider();
@@ -126,7 +153,6 @@ setActivePriceTabs = function(link='') {
         isLinkClick = false;
     }
     if (link.indexOf("/prices/#funeral")!=-1) {
-        console.log('Таб. Захоронение.');
         $('[data-tab=".xtab-burial"]').trigger('click');
         if (isLinkClick) {
             $('body').removeClass('open-mobile-menu');
@@ -134,13 +160,23 @@ setActivePriceTabs = function(link='') {
         return true;
     }
     if (link.indexOf("/prices/#cremation")!=-1) {
-        console.log('Таб. Кремация.');
         $('[data-tab=".xtab-cremation"]').trigger('click');
         if (isLinkClick) {
             $('body').removeClass('open-mobile-menu');
         }
         return true;
     }
+
+    let xtab_index = link.indexOf("#xtab-");
+    if (xtab_index != -1) {
+        xtab_anc = link.substr(xtab_index+1);
+        $('[data-tab=".'+xtab_anc+'"]').trigger('click');
+        if (isLinkClick) {
+            $('body').removeClass('open-mobile-menu');
+        }
+        return true;
+    }
+
     return false;
 }
 

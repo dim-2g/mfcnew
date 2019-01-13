@@ -1464,7 +1464,7 @@ ul.ndash{
           margin-right: 10px;
           position: absolute;
           left: 1px;
-          top: 9px;
+          top: 10px;
           background-color: #444;
       }
   }
@@ -1652,3 +1652,106 @@ ul.ndash{
   }
 }
 
+
+
+.fixed-rating{
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 100;
+  background-color: $light-blue;
+  padding: 15px 12px 20px;
+  width: 126px;
+  border-radius: 0 14px 14px 0;
+  text-decoration: none;
+  text-align: center;
+  transform: translate(-4px, -50%);
+  transition: $anim;
+  box-shadow: 0 0 8px -5px #ccc;
+  display: none;
+  @media ($bp-larger-than-desktophd) {
+      display: block;
+  } 
+  &:hover{
+      text-decoration: none;
+      transform: translate(0, -50%);
+  }
+  &__values{
+      color: #6c7e9a;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+  }
+  &__value{
+      font-size: 22px;
+      color: $blue;
+      font-weight: 900;
+  }
+  &__text{
+      color: #616264;
+      font-size: 13px;
+      text-align: center;
+      line-height: 100%;
+  }
+  &__stars{
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 8px;
+  }
+  &__star{
+      &:before{
+          display: inline-block;
+          content: "";
+          @include sprite($rating-star);
+      }
+      &--4-8{
+          &:before{
+              display: inline-block;
+              content: "";
+              @include sprite($rating-star-4-8);
+          }   
+      }
+  }
+}
+
+.styled-page-navigation{
+  display: flex;
+  flex-wrap: wrap;
+  &__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    margin-right: 16px;
+    margin-bottom: 5px;
+  }
+  &__previous{
+    margin-right: 16px;
+  }
+  a{
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $blue;
+    &.styled-page-navigation__item{
+      background-color: $light-blue;
+      color: $blue;
+      transition: $anim;
+      &:hover{
+        background-color: $blue;
+        color: #fff;  
+        text-decoration: none;
+      }
+    }
+  }
+  span{
+    &.styled-page-navigation__item{
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+}

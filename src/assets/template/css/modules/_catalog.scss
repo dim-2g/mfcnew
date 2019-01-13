@@ -1,0 +1,199 @@
+.b-catalog{
+    padding: 0 0 40px;
+    &__box{
+        @media ($bp-larger-than-desktop) {
+            display: flex;
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-bottom: 18px;
+        } 
+    }
+    &__sidebar{
+        margin-bottom: 40px;
+        @media ($bp-larger-than-desktop) {
+            padding-left: 15px;
+            padding-right: 15px;
+            flex-shrink: 0;
+            width: 290px;
+            
+        }
+    }
+    &__content{
+        @media ($bp-larger-than-desktop) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+    &__bottom{
+        margin-top: 10px;
+        margin-bottom: 30px;
+        &.stext{
+            > h3 {
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+        }
+        +.separator{
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.catalog-menu{
+    &__item{
+        &--active{
+            .catalog-menu__items{
+                display: block;
+            } 
+            .catalog-menu__title{
+                &:after{
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    &__title{
+        border-bottom: 1px solid #e6e6e7;
+        padding: 14px 34px 13px 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: $blue;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        position: relative;
+        &:after{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 18px;
+            @include sprite($catalog-menu-arrow);
+            transition: $anim;
+        }
+        &:hover{
+            &:after{
+                transform: rotate(90deg);
+            }
+        }
+        a{
+            color: $blue;
+            background-color: $light-blue;
+            display: inline-block;
+            font-size: 13px;
+            padding: 5px 12px;
+            border-radius: 12px;
+            opacity: 0.64;
+            text-decoration: none;
+            transition: $anim;
+            text-transform: none;
+            font-weight: normal;
+            margin-left: auto;
+            &:hover{
+                text-decoration: none;
+                opacity: 1;
+            }
+        }
+    }
+    &__items{
+        display: none;
+        padding: 20px 0 15px;
+        border-bottom: 1px solid #e6e6e7;
+    }
+    &__list{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li{
+            margin-bottom: 5px;
+        }
+        a{
+            padding: 5px 22px;
+            display: inline-block;
+            border-radius: 12px;
+            color: $blue;
+            font-size: 15px;
+            font-weight: 900;
+            text-decoration: none;
+            width: 100%;
+            &:hover{
+                background-color: $light-blue;
+                color: $blue;
+            }
+            &.active{
+                background-color: $blue;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.catalog-product{
+    &__list{
+        display: flex;
+        margin-left: -15px;
+        margin-right: -15px;
+        flex-wrap: wrap;
+    }
+    &__item{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 20px;
+        width: 100%;
+        @media ($bp-larger-than-tablet) {
+            width: 33.33%;
+        } 
+    }
+}
+
+.product-card{
+    background-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(245, 246, 248);
+    border-radius: 15px;
+    box-shadow: 0px 15px 15px 0px rgba(30, 55, 95, 0.1);
+    width: 100%;
+    max-width: 262px;
+    padding: 14px 4px 25px;
+    margin-left: auto;
+    margin-right: auto;
+    /*transition: $anim;
+    transform: none;
+    &:hover{
+        transform: translateY(-4px);
+    }*/
+    &__image{
+        min-height: 170px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            max-width: 100%;
+        }
+    }
+    &__name{
+        font-size: 15px;
+        font-weight: 900;
+        text-align: center;
+        color: $blue;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 100%;
+        padding: 0 20px;
+    }
+    &__options{
+        color: $blue;
+        opacity: 0.64;
+        font-size: 13px;
+        text-align: center;
+        min-height: 28px;
+    }
+    &__more{
+        padding: 10px 20px 0;
+    }
+}
+

@@ -108,7 +108,7 @@ gulp.task('sass:dev2', function() {
     return gulp.src(path.src.sass)
         .pipe(plumber())
         //.pipe(sourcemaps.init())
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'compressed'}))
         //.pipe(sourcemaps.write())
         .pipe(autoprefixer({
             browsers: ['last 5 versions'],

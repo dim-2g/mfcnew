@@ -2,14 +2,14 @@
     &__grid{
         
         margin-bottom: 26px;
-        @media ($bp-larger-than-mobile) {
+        @media ($bp-larger-than-tablet) {
           display: flex;
         } 
     }
     &__left{
         width: 100%;
         margin-bottom: 30px;
-        @media ($bp-larger-than-mobile) {
+        @media ($bp-larger-than-tablet) {
           margin-bottom: 0;
         }
     }
@@ -172,7 +172,7 @@
       }
       &--bo13{
         margin-top: 20px;
-        @media ($bp-larger-than-mobile) {
+        @media ($bp-larger-than-tablet) {
           margin-top: 40px;
         } 
         &:before{
@@ -194,7 +194,7 @@
       }
       &--manufacture{
         margin-top: 15px;
-        @media ($bp-larger-than-mobile) {
+        @media ($bp-larger-than-tablet) {
           margin-top: 36px;
         } 
       }
