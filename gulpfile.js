@@ -298,6 +298,15 @@ gulp.task('develop2', gulpsync.sync([
     'webserver:dev'
 ]));
 
+gulp.task('develop3', gulpsync.sync([
+    'clean',
+    'sprite:dev',
+    [
+        'html:dev',
+        'sass:dev2'
+    ]
+]));
+
 // Режим production
 gulp.task('production', gulpsync.sync([
     'clean',

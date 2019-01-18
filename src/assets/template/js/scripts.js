@@ -137,6 +137,19 @@ $(function() {
     $('body').on('click', '.catalog-menu__title a', function(e) {
         e.stopPropagation();
     });
+    $('body').on('click', '.morgue-schedule-js', function(e) {
+        e.preventDefault();
+        $(this).toggleClass('active');
+        $('.schedule-box').slideToggle();
+    });
+
+    $('body').on('click', '.region-accordeon__name', function(e) {
+        e.preventDefault();
+        item = $(this).parents('.region-accordeon__item');
+        item.find('.region-accordeon__body').slideToggle(400, function(){
+            item.toggleClass('active');
+        });
+    });
 
     initPartnersSlider();
     initGratefulSlider();

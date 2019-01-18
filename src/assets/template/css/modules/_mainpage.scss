@@ -774,12 +774,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: underline;
+    text-decoration: none;
     position: relative;
+    flex-direction: column;
     @media ($bp-larger-than-tablet) {
       font-size: 18px;
     }
-
   }
   &--burial{
 
@@ -852,6 +852,16 @@
         }
       }
 
+  }
+  &__title{
+    text-decoration: underline;
+  }
+  &__cost{
+    font-weight: normal;
+    opacity: 0.64;
+    font-style: 15px;
+    text-transform: none;
+    margin-top: 3px;
   }
 }
 

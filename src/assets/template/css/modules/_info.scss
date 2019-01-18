@@ -1,0 +1,178 @@
+.b-info{
+    padding-top: 15px;
+    +.separator{
+        margin-top: 25px;
+    }
+    &__grid{
+        display: flex;
+        margin-left: -15px;
+        margin-right: -15px;
+        flex-wrap: wrap;
+        @media ($bp-larger-than-desktop) {
+
+        } 
+    }
+    &__column{
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        @media ($bp-larger-than-tablet) {
+            width: 50%;
+        } 
+        @media ($bp-larger-than-desktop) {
+            width: 33.33%;
+        } 
+    }
+    &__title{
+        color: #8c8c8c;
+        font-weight: 900;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+    &__item{
+        margin-bottom: 13px;
+    }
+    &__link{
+        padding-left: 88px;
+        display: flex;
+        color: $blue;
+        font-weight: bold;
+        font-size: 18px;
+        min-height: 60px;
+        align-items: center;
+        position: relative;
+        &:before{
+            display: inline-block;
+            content: "";
+            position: absolute;
+            left: 12px;
+            top: 0;
+        }
+        &--uszn{
+            &:before{
+                @include sprite($info-uszn);
+            }
+        }
+        &--docs{
+            &:before{
+                @include sprite($info-docs);
+            }
+        }
+        &--mfc{
+            &:before{
+                @include sprite($info-docs);
+            }
+        }
+        &--orthodox{
+            &:before{
+                @include sprite($info-orthodox-funeral);
+            }
+        }
+        &--islam{
+            &:before{
+                @include sprite($info-islam-funeral);
+            }
+        }
+        &--buddism{
+            &:before{
+                @include sprite($info-buddism-funeral);
+            }
+        }
+        &--iudaism{
+            &:before{
+                @include sprite($info-iudaism-funeral);
+            }
+        }
+        &--protest{
+            &:before{
+                @include sprite($info-protest-funeral);
+            }
+        }
+        &--heir-rights{
+            &:before{
+                @include sprite($info-heir-rights);
+            }
+        }
+        &--hram{
+            &:before{
+                @include sprite($info-orthodox-funeral);
+            }
+        }
+        &--kladb{
+            &:before{
+                @include sprite($info-cemetery-moscow);
+            }
+        }
+        &--crematoriums{
+            &:before{
+                @include sprite($info-crematoriums-moscow);
+            }
+        }
+        &--morgues{
+            &:before{
+                @include sprite($info-morgues-moscow);
+            }
+        }
+        &--columbarium{
+            &:before{
+                @include sprite($info-columbarium-moscow);
+            }
+        }
+        &--warehouse{
+            &:before{
+                @include sprite($info-warehouse);
+            }
+        }
+        &--forma13{
+            &:before{
+                @include sprite($info-forma13);
+            }
+        }
+        &--certificate{
+            &:before{
+                @include sprite($info-forma13);
+            }
+        }
+        &--gerbcertif{
+            &:before{
+                @include sprite($info-gerbcertif);
+            }
+        }
+        &--doc{
+            &:before{
+                @include sprite($info-doc);
+            }
+        }
+        &--whatdo{
+            &:before{
+                @include sprite($info-what-do);
+            }
+        }
+        &--question{
+            &:before{
+                @include sprite($info-question);
+            }
+        }
+        &--articles{
+            &:before{
+                @include sprite($info-doc);
+            }
+        }
+        &--fraud{
+            &:before{
+                @include sprite($info-creminal);
+            }
+        }
+        
+    }
+    &__block{
+        margin-bottom: 43px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    &__contacts{
+        margin-top: 34px;
+    }
+}

@@ -581,5 +581,38 @@ center: [55.537648, 37.573806],
 };
 </script>
 <script src="/assets/template/js/map.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+      ymaps.ready(init_map);
+
+      function init_map() {
+        var myMap = new ymaps.Map('morgues-map', {
+            center: [55.76, 37.64],
+            zoom: 10,
+            controls: []
+          }, {
+            searchControlProvider: 'yandex#search'
+          }),
+          objectManager = new ymaps.ObjectManager({
+            // Чтобы метки начали кластеризоваться, выставляем опцию.
+            clusterize: true,
+            // ObjectManager принимает те же опции, что и кластеризатор.
+            gridSize: 64,
+            // Макет метки кластера pieChart.
+            clusterIconLayout: "default#pieChart"
+          });
+        myMap.geoObjects.add(objectManager);
+        myMap.behaviors.disable('scrollZoom');
+        myMap.controls.add('zoomControl');
+        $.ajax({
+          url: "/assets/template/js/morgs.json"
+        }).done(function (data) {
+          objectManager.add(data);
+        });
+      }
+    });
+   </script> 
+
 </body>
 </html>
