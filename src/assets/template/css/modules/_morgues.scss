@@ -435,8 +435,9 @@
 }
 
 .morgues-text{
-    >h3{
-        margin-top: 33px;
+    padding-top: 35px;
+    > *{
+        margin-top: 0;
     }
     h3{
         margin-top: 42px;
