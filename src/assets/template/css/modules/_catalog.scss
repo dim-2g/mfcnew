@@ -19,6 +19,7 @@
         }
     }
     &__content{
+        width: 100%;
         @media ($bp-larger-than-desktop) {
             padding-left: 15px;
             padding-right: 15px;

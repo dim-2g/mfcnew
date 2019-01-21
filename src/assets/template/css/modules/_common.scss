@@ -1224,10 +1224,10 @@ body{
     }
   }
   &__sidebar{
-      padding-top: 10px;
+      padding-top: 30px;
       @media ($bp-larger-than-tablet) {
         flex-shrink: 0;
-        width: 360px;
+        //width: 360px;
       }
       @media ($bp-larger-than-desktop) {
         flex-shrink: 0;

@@ -38,10 +38,13 @@
         display: flex;
         color: $blue;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
         min-height: 60px;
         align-items: center;
         position: relative;
+        @media ($bp-larger-than-desktop) {
+            font-size: 18px;
+        } 
         &:before{
             display: inline-block;
             content: "";

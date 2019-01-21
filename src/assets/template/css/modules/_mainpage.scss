@@ -742,6 +742,7 @@
   display: flex;
   width: 100%;
   padding: 65px 15px 20px 15px;
+  border: 1px solid #f5f6f8;
   position: relative;
   transition: $anim;
   transform: translateY(0);
@@ -753,6 +754,9 @@
     transform: translateY(-3px);
     box-shadow: 0px 15px 20px 0px rgba(30, 55, 95, 0.2);
     .service-block__caption{
+      text-decoration: none;
+    }
+    .service-block__title{
       text-decoration: none;
     }
   }
@@ -1827,7 +1831,7 @@
     flex-shrink: 0;
     border-radius: 14px;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     min-height: 130px;
     margin-bottom: 8px;
     @media ($bp-larger-than-tablet) {
@@ -1892,7 +1896,7 @@
     flex-shrink: 0;
     border-radius: 14px;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     margin-bottom: 8px;
     min-height: 130px;
     @media ($bp-larger-than-tablet) {
