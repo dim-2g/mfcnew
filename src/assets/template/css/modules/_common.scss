@@ -1655,6 +1655,39 @@ ul.ndash{
   }
 }
 
+.stext-styled{
+  &.stext{
+    ul{
+      list-style-type: none;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      li{
+          padding-left: 30px;
+          position: relative;
+          line-height: 135%;
+          margin-bottom: 12px;
+          &:before{
+              display: inline-block;
+              content: "";
+              width: 11px;
+              height: 1px;
+              margin-right: 10px;
+              position: absolute;
+              left: 1px;
+              top: 9px;
+              background-color: #cdcdd0;
+          }
+      }     
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+.divtable div div {
+  padding: 3px;
+}
 
 
 .fixed-rating{

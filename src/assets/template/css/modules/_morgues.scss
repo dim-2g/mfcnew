@@ -465,9 +465,16 @@
 }
 
 .morgue-form{
-    padding: 35px 0 35px;
+    padding: 15px 0 35px;
     @media($bp-larger-than-desktop) {
-        padding: 35px 0 50px;
+        padding: 15px 0 50px;
+    }
+}
+
+.morgue-text{
+    padding: 15px 0 35px;
+    @media($bp-larger-than-desktop) {
+        padding: 15px 0 50px;
     }
 }
 
@@ -475,6 +482,14 @@
     padding: 35px 0 15px;
     @media($bp-larger-than-desktop) {
         padding: 50px 0 30px;
+    }
+    &__header{
+        font-size: 21px;
+        font-weight: 900;
+        margin-top: 0;
+        @media ($bp-larger-than-tablet) {
+            font-size: 35px;
+        }
     }
 }
 
